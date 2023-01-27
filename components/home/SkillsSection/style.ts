@@ -12,7 +12,6 @@ export const Title = styled.h2`
     padding-top:20px
 `;
 export const Container = styled.div`
-    height: 100vh;
     background: ${props => props.theme.colors.light};
     padding-left: 10vw;
     padding-right: 10vw;
