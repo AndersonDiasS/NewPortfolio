@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 
+
 export const Title = styled.h2`
-    color: #000;
-    font-size:3rem;
+    color: ${props => props.theme.colors.dark};
+    font-size:${props => props.theme.sizeFonts.title};
     margin: 0px;
     padding:0px;
     width:100%;
@@ -12,68 +13,53 @@ export const Title = styled.h2`
 `;
 export const Container = styled.div`
     height: 100vh;
-    background: #ffff;
+    background: ${props => props.theme.colors.light};
     padding-left: 10vw;
     padding-right: 10vw;
 `;
 
  
+ export const TextContainer = styled.div`
+    width:50%;
+    border:1px solid ${props => props.theme.colors.dark};
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ `;
 
-export const Card = styled.div`
-    
-  width: 250px;
-  height:250px;
-  margin-top:80px;
-    
-    perspective: 1000px;
-    position:relative;
-    margin-left:10px;
-    margin-right:10px
+ export const Text = styled.div`
+    font-size: ${props => props.theme.sizeFonts.text};
+ 
+ `;
 
+ export const IconsContainer = styled.div`
+    width:50%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+ `;
 
-`;
-
-export const CardFlipper = styled.div`
-        width:100%;
-        height:100%;
-        transition: transform 0.8s;
-	     background-color: #fff;;
-        transform-style: preserve-3d;
-        position: relative;
-        box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
-        border-radius: 5px;
-        background: #fff;
-        color: #8D18f2;
-        &:hover{
-            transform: rotateY(180deg);
-        }
-
-      
-`;
-
-export const CardFlipperFront = styled.div`
-position: absolute;
-	width: 100%;
-	height: 100%;
-    backface-visibility: hidden;
-    padding:25px;
-
-`;
-
-export const CardFlipperBack = styled.div`
-position: absolute;
-	width: 100%;
-    transform: rotateY(180deg);
-	height: 100%;
-    backface-visibility: hidden;
-
-`;
+ export const iconCard = styled.div`
+    width: 115px;
+    border: 1px solid ${props => props.theme.colors.dark};
+    align-items:center;
+    display:flex;
+    margin: 10px 10px;
+    border-radius: 5px;
+    img{
+        width:60px;
+        height:60px;
+        margin: 0 auto;
+    }
+ `;
 
 export const Row = styled.div `
         display:flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
+        margin-top:100px;
  `;
 
 
@@ -81,11 +67,12 @@ export const Wave = styled.div`
     margin-top: -1px;
     top: 0;
     left: 0;
+    background: ${props => props.theme.colors.light};
     width: 100%;
     overflow: hidden;
     line-height: 0;
     svg{
-        fill:#42106E;
+        fill:${props => props.theme.colors.dark};
         display: block;
         width: calc(118% + 1.3px);
         height: 53px;

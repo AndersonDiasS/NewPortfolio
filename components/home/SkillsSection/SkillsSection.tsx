@@ -1,7 +1,33 @@
 import * as S from './style';
 import React from 'react';
+import Image from 'next/image';
+import iconHtml from '../../../public/Images/icons/html5.svg';
+import iconCSS from '../../../public/Images/icons/css3-alt.svg';
+import iconSass from '../../../public/Images/icons/sass.svg';
+import iconReact from '../../../public/Images/icons/react.svg';
+import iconNext from '../../../public/Images/icons/nextjs-icon.svg';
+import iconWordpress from '../../../public/Images/icons/wordpress.svg';
+import iconGraphql from '../../../public/Images/icons/icons8-graphql.svg';
+import iconJs from '../../../public/Images/icons/js.svg';
+import iconStyledComponents from '../../../public/Images/icons/styled-components.svg';
+import iconSeo from '../../../public/Images/icons/icons8-chrome.svg';
  
 export default function SkillsSection() {
+
+        const skills = [
+        { name: 'html', src:iconHtml },
+        { name: 'CSS', src: iconCSS },
+        { name: 'SASS', src: iconSass },
+        {name: 'Javascript', src: iconJs},
+        { name: 'Styled Components', src: iconStyledComponents  },
+        { name: 'React', src: iconReact },
+        { name: 'Next', src: iconNext },
+        { name: 'Wordpress', src: iconWordpress },
+        {name: 'GraphQl', src: iconGraphql },
+        {name: 'SEO and Performance', src: iconSeo},
+        
+    ];
+
   
     return (
         <>
@@ -15,27 +41,20 @@ export default function SkillsSection() {
 
 
         <S.Row>
-        
-            <S.Card>
-                <S.CardFlipper>
-                <S.CardFlipperFront>teste</S.CardFlipperFront>
-                 <S.CardFlipperBack>Teste de trás</S.CardFlipperBack>
-                 </S.CardFlipper>
-            </S.Card>
+        <S.TextContainer>
+            <S.Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet libero nisi. Cras maximus felis id quam tristique imperdiet. Aenean mauris odio, volutpat sed maximus ut, auctor vitae lacus. Proin eget urna vitae libero interdum ullamcorper. Vivamus porttitor lacus sit amet ipsum finibus bibendum. Vivamus volutpat suscipit augue, ut molestie magna interdum a. Phasellus sollicitudin lobortis faucibus.
+             Aliquam posuere faucibus quam. Suspendisse sagittis tortor eros. Nunc tincidunt accumsan purus, a ornare felis laoreet id.
+            </S.Text>
 
-            <S.Card>
-                <S.CardFlipper>
-                <S.CardFlipperFront>teste</S.CardFlipperFront>
-                 <S.CardFlipperBack>Teste de trás</S.CardFlipperBack>
-                 </S.CardFlipper>
-            </S.Card>
-
-            <S.Card>
-                <S.CardFlipper>
-                <S.CardFlipperFront>teste</S.CardFlipperFront>
-                 <S.CardFlipperBack>Teste de trás</S.CardFlipperBack>
-                 </S.CardFlipper>
-            </S.Card>
+        </S.TextContainer>
+        <S.IconsContainer>
+            {skills.map((icon, iconIndex) => { return (
+                <S.iconCard key={iconIndex}>
+                    <Image  src={icon.src} alt={icon.name}/>
+                </S.iconCard>
+            )})}
+        </S.IconsContainer>
  
         </S.Row>
      </S.Container>
